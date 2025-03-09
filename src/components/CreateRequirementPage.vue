@@ -16,13 +16,7 @@
 
       <div class="form-group">
         <label for="description">要件詳細</label>
-        <div 
-          contenteditable="true" 
-          class="input-field large-input" 
-          v-html="description" 
-          @input="updateDescription"
-          @keydown.enter="handleEnter"
-        />
+        <textarea v-model="description" class="input-field large-input"></textarea>
       </div>
     </form>
   </div>
