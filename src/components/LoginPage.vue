@@ -8,9 +8,11 @@
       <label for="password">パスワード</label>
       <input type="password" id="password" v-model="password" placeholder="8文字以上" />
       
-      <button class="login-button" @click="login">同意してログイン</button>
+      <button class="login-button" @click="login">ログイン</button>
       
       <button class="register-button" @click="register">新規登録はこちら</button>
+      
+      <button class="reset-button" @click="resetPassword">再発行はこちら</button>
     </div>
   </div>
 </template>
@@ -53,7 +55,11 @@ export default {
       router.push('/register');
     };
 
-    return { email, password, login, register };
+    const resetPassword = () => {
+      router.push('/password-reset');
+    };
+
+    return { email, password, login, register, resetPassword };
   }
 };
 </script>
@@ -108,6 +114,16 @@ input {
 
 .register-button {
   background-color: orange;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reset-button {
+  background-color: #28a745; /* 明るめのオレンジ */
   color: white;
   padding: 10px;
   border: none;
