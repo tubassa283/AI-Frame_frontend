@@ -8,13 +8,16 @@ import RegisterPage from './components/RegisterPage.vue';
 import HomePage from './components/HomePage.vue';
 import CreateRequirementPage from './components/CreateRequirementPage.vue';
 import RequirementDetailPage from './components/RequirementDetailPage.vue';
+import PasswordResetPage from './components/PasswordResetPage.vue'; // パスワード再発行ページを追加
 
 const routes = [
-  { path: '/', component: LoginPage },
-  { path: '/register', component: RegisterPage }, // 新規登録ページのルートを追加
+  { path: '/', component: LoginPage }, // デフォルトのルートをログインページに設定
+  { path: '/login', component: LoginPage },
+  { path: '/register', component: RegisterPage },
   { path: '/home', component: HomePage },
   { path: '/create-requirement', component: CreateRequirementPage },
-  { path: '/requirement-detail/:id', component: RequirementDetailPage }
+  { path: '/requirement-detail/:id', component: RequirementDetailPage },
+  { path: '/password-reset', component: PasswordResetPage } // パスワード再発行ページのルートを追加
 ];
 
 const router = createRouter({
